@@ -1,0 +1,61 @@
+/* color pallet choices */
+/* color: #f6f1ed - Light tan */
+/* color: #D3C8C1 - Lighter brown */
+/* color: #b5a397 - Light brown */
+/* color: #6a5750 - Medium brown */
+/* color: #30231d - Dark brown */
+
+
+html, body, #container { height: 100%; }
+body > #container { height: auto; min-height: 100%; }
+
+html {
+    font-family: Trebuchet MS, Verdana, Helvetica, Arial, sans-serif;
+/*    margin-top: -70px;*/
+}
+
+body {
+    padding-top: 120px;
+}
+
+/*
+.body {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+*/
+
+/*
+.left-side {
+    min-width: 12em;
+    float: left;
+    display: table-cell;
+    height: inherit;
+}
+*/
+
+/*
+.right-side {
+    min-width: 22em;
+    padding: 0em 1em;
+    float: right;
+    display: table-cell;
+    height: inherit;
+}
+*/
+
+/*
+.footer {
+    clear: both;
+	position: relative;
+    z-index: 10;
+	height: 3em;
+    margin-top: 3em;
+	
+	font-size: .9em;
+	text-align: center;
+	color: #f6f1ed;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}*/

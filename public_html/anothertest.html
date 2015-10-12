@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <meta name="description" content="Travis Reeder's Administration Page">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        
+        <script src="script/respond.js"></script>
+        
+		<link rel="stylesheet" type="text/css" href="css/index_theme.css"/>
+		
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="ckeditor/ckeditor.js"></script>
+        <title>Travis' Site</title>
+	</head>
+
+    <body>
+        <!--
+        <header>
+            <div id="headline" class="gradient">
+                <img class="avatar" src="../images/img_0047.jpg" alt="Travis Reeder">
+                <a href="../admin/index.php"><h2 class="opposite gradient">Welcome to Travis' Site - Administration</h2></a>
+            </div>
+        </header>
+        -->
+		
+                <div class="row" id="wrapper">
+            <nav class="navbar navbar-default navbar-fixed-top navbar-inverse navbar-custom gradient">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="manage_content.php"><img class="avatar" alt="Travis Reeder" src="../images/img_0047.jpg"></a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
+                        <span class="sr-only">Toggle navigation</span>MENU
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="collapse">
+                    <ul class="nav navbar-nav">
+                                                <li
+                         class="active">                        <a href="../admin/manage_content.php?nav=1" title="Manage Content">Manage Content</a></li>
+                        <li
+                        >                        <a href="../admin/manage_users.php?nav=2" title="Manage Users">Manage Users</a></li>
+                        <li><a href="../admin/logout.php">Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+            <div class="container-fluid" id="container">
+                <div class="display_content">
+                <div class="row body">
+                    <div class="col-xs-2 left-side gradient2" id="navigation">
+                            <br />
+                            <a href="index.php">&laquo; Main menu</a><br />
+
+                            <div class="row"><ul class="subjects"><li class="selected"><a href="manage_content.php?nav=1&subject=1">About Me</a><div class="row"><ul class="pages"><li><a href="manage_content.php?nav=1&page=1&subject=1">Overview</a></li><li><a href="manage_content.php?nav=1&page=5&subject=1">Another test</a></li><li><a href="manage_content.php?nav=1&page=6&subject=1">Another test page</a></li><li><a href="manage_content.php?nav=1&page=2&subject=1">My favorite links</a></li></ul></dev></li><li><a href="manage_content.php?nav=1&subject=3">My Resume</a><div class="row"><ul class="pages"></ul></dev></li><li><a href="manage_content.php?nav=1&subject=2">Photo Gallery</a><div class="row"><ul class="pages"><li><a href="manage_content.php?nav=1&page=3&subject=2">Test 1</a></li><li><a href="manage_content.php?nav=1&page=4&subject=2">Test 2</a></li></ul></dev></li><li><a href="manage_content.php?nav=1&subject=4">Additional Information</a><div class="row"><ul class="pages"></ul></dev></li></ul></div>                            <!-- echo navigation($current_subject, $current_page); -->
+                            <a href="new_subject.php?nav=1" class="btn btn-info" role="button">Add a subject</a>
+                    </div>                    
+                                                                    <div class="col-xs-10 right-side">
+                            <h2>Manage Subject: About Me</h2>
+<table class="table table-condensed">
+                            <tr>
+                            <th>Field</th>
+                            <th>Value</th>
+                            </tr>
+                            <tr>
+                                <td>Menu name:</td>
+                                <td>About Me</td>
+                            </tr>
+                            <tr>
+                                <td>Position:</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Visible:</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td>URL:</td>
+                                <td></td>
+                            </tr>
+                        </table>
+					
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <a href="edit_subject.php?nav=1&subject=1" class="btn btn-info" role="button">Edit Subject</a>
+                        </div>
+                    </div>
+
+		            <hr />
+		           	<h3>Pages in this subject:</h3>
+                    <ul>
+                    <li><a href="manage_content.php?nav=1&page=1">Overview</a></li><li><a href="manage_content.php?nav=1&page=5">Another test</a></li><li><a href="manage_content.php?nav=1&page=6">Another test page</a></li><li><a href="manage_content.php?nav=1&page=2">My favorite links</a></li>                    </ul>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p><a href="new_page.php?nav=1&subject=1" class="btn btn-info" role="button">Add a new page to this subject</a></p>
+                        </div>
+                    </div>
+    
+                    </div>
+		        		    </div>
+            </div> <!-- End display_content -->
+            </div> <!-- End container -->
+
+<footer class="footer gradient">Copyright 2015, Travis Reeder</footer>
+
+<!-- javascript -->
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../script/bootstrap.min.js"></script>
+
+	</body>
+
+
+</html>

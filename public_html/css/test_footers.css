@@ -1,0 +1,25 @@
+html, body, #container { height: 100%}
+body > #container { height: auto; min-height: 100%; }
+
+html {
+    margin-top: -3.5em;
+}
+
+body {
+    padding-top: 2em;
+}
+
+.footer {
+ clear: both;
+ position: relative;
+ z-index: 10;
+ height: 2em;
+ margin-top: -2em;
+ background-color: black; 
+ color: white; 
+ font-size: 200%; 
+ text-align: center; 
+  }
+}
+
+.display_content { padding-bottom: 2em; }

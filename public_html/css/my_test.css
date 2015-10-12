@@ -1,0 +1,21 @@
+.btn-info {
+    background-color: #30231d;
+    border-color: #30231d;
+    color: #f6f1ed;
+}
+
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active,
+.btn-info.active,
+.open .dropdown-toggle.btn-info {
+  color: #f6f1ed;
+  background-color: #b5a397;
+  border-color: #30231d;
+}
+
+.alert-info {
+    color: #30231d;
+    background-color: #D3C8C1;
+    border-color: #30231d; 
+}

@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+/* Layout Medium Screens */
+
+header {
+/*	height: 60px;*/
+/*	background: url(../images/banner_medium.jpg) no-repeat 90% 0px;*/
+}
+
+header a.logo {
+	width: 115px; height: 70px;
+	top: 20px; right: 20px;
+	background-image: url(../images/logo_medium.png);
+}
+
+/*
+nav {  top: 61px; }
+nav a { margin-right: 20px; }
+*/
+
+li {
+    clear:left;
+}
+
+.bullet-heading {
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-bottom: -15px;
+}
+
+.bullet-columns { 
+/*    border: solid green; */
+    height: 140px;
+}
+
+.bullet-columns .column {
+    padding-top: 0px;
+    margin-bottom: -15px;
+	float: none;
+}
+
+footer { 
+    height: 45px;
+}
+
+footer p {
+    padding: 10px;
+    margin: 0;
+    font-size: .7em;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <meta name="description" content="Surrey Ridge HOA Administration Page">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Bootstrap -->
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" >
+        <link rel="stylesheet" type="text/css" href="../css/calendar.min.css">
+        
+        <script src="../script/respond.js"></script>
+        
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        
+        <!-- DataTables CSS -->
+        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap-datepicker3.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap-select.min.css" />
+        <link rel="stylesheet" type="text/css" href="../css/index_theme.css"/>
+		
+        
+        <script src="../ckeditor/ckeditor.js"></script>
+        <title>Surrey Ridge HOA - Administration</title>
+	</head>
+    
+    <body>
+		
+        <div class="row" id="wrapper">
+            <nav class="navbar navbar-default navbar-fixed-top navbar-inverse navbar-custom gradient">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="manage_content.php"><img class="avatar" alt="Surrey Ridge Logo" src="../images/surrey_logo.png"></a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
+                        <span class="sr-only">Toggle navigation</span>MENU
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown"><a href="#" data-toggle="dropdown">Content<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="new_subject.php">Add a Subject</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-submenu"><a href="manage_content.php?subject=1">About SRHOA</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="manage_content.php?nav=1&page=1&subject=1">Home</a></li>
+                                        <li><a href="manage_content.php?nav=1&page=12&subject=1">SRHOA Board</a></li>
+                                        <li><a href="manage_content.php?nav=1&page=13&subject=1">ACC</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu"><a href="manage_content.php?subject=4">Resources</a> 
+                                    <ul class="dropdown-menu">
+                                        <li><a href="manage_content.php?nav=1&page=19&subject=4">HOA Dues</a></li>
+                                        <li><a href="manage_content.php?nav=1&page=14&subject=4">Documents</a></li>
+                                        <li><a href="manage_content.php?nav=1&page=15&subject=4">Meeting Minutes</a></li>
+                                        <li><a href="manage_content.php?nav=1&page=17&subject=4">All Documents</a></li>
+                                        <li><a href="manage_content.php?nav=1&page=16&subject=4">Articles of Incorporation</a></li>
+                                        <li><a href="manage_content.php?nav=1&page=18&subject=4">Multiple Document Types</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="manage_content.php?subject=7">Community Calendar</a></li>
+                                <li><a href="manage_content.php?subject=6">Contact Us</a></li>
+                                <li class="divider"></li>
+                                <li><a href="edit_marquee.php">Edit Marquee</a></li>
+                                <li class="divider"></li><li><a href="manage_calendar_events.php">Calendar Events</a></li>
+                            </ul>                                   
+                        </li>
+                        <li><a href="../admin/manage_users.php?nav=2" title="Users">Users</a></li>
+                        <li><a href="../admin/manage_documents.php?nav=3" title="Documents">Documents</a></li>
+                        <li><a href="../admin/manage_visitors.php?nav=4" title="Visitors">Visitors</a></li>
+                        <li><a href="../admin/logout.php">Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
+<div class="container-fluid" id="container">
+    <div class="display_content">
+                    
+        <div class="row">
+            <div class="col-xs-12">
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-xs-12">
+            <h1>Manage Content</h1>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">        
+                <p>Please select a subject or a page from the Manage Content menu/drop-down.</p>
+            </div>
+        </div>
+        </div> <!-- End display_content -->
+</div> <!-- End container -->
+
+<footer>
+<!--
+<div class="col-md-12">
+    <ul class="social-network social-circle">
+        <li><a href="http://www.facebook.com/travis.reeder" target="_blank" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://twitter.com/travis_reeder" target="_blank" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://plus.google.com/u/0/105847139391319945338/posts" target="_blank" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+        <li><a href="http://www.linkedin.com/in/travisreeder" target="_blank" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+    </ul>				
+</div>
+-->
+    <p align="center">If you have questions or comments about this website, please send them to the <a href="mailto:travis@travisreeder.com">Webmaster</a></p>
+    <div class="footer gradient">Copyright 2015, Surrey Ridge HOA</div>
+</footer>
+
+    <script type="text/javascript" src="../script/jquery-2.1.4.min.js"></script>
+    
+<!-- DataTables -->
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" src="../script/underscore-min.js"></script>
+    <script type="text/javascript" src="../script/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../script/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="../script/bootstrap-select.min.js"></script>
+
+    <script type="text/javascript" src="../script/jstz.min.js"></script>
+	<script type="text/javascript" src="../script/calendar.js"></script>
+	<script type="text/javascript" src="../script/app.js"></script>
+    <script type="text/javascript" src="../script/script.js"></script>
+
+	</body>
+</html>
