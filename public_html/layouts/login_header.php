@@ -23,7 +23,7 @@ if (!isset($layout_context)) {
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="../ckeditor/ckeditor.js"></script>
         
-        <title>Travis' Site - Administration</title>
+        <title>Surrey Ridge HOA - Administration</title>
 	</head>
     
     <body style="padding-top: -50px">
