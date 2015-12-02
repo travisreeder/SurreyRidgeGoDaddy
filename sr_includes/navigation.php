@@ -121,7 +121,7 @@ class Navigation {
             $selected_subject = $_GET['subject'];
         }
         $output = "<div class=\"row\" id=\"wrapper\">";
-        $output .= "<nav class=\"navbar navbar-default navbar-fixed-top navbar-inverse navbar-custom gradient\">";
+        $output .= "<nav class=\"navbar navbar-default navbar-fixed-top navbar-inverse\">";
         
         $output .= "<div class=\"navbar-header\">";
         
