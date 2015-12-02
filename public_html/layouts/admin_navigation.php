@@ -1,6 +1,6 @@
 <?php    
 echo "<div class=\"row\" id=\"wrapper\">";
-echo "<nav class=\"navbar navbar-default navbar-fixed-top navbar-inverse navbar-custom gradient\">";
+echo "<nav class=\"navbar navbar-default navbar-fixed-top navbar-inverse\">";
 echo "<div class=\"navbar-header\">";
 echo "<a class=\"navbar-brand\" href=\"manage_content.php\"><img class=\"avatar\" alt=\"Surrey Ridge Logo\" src=\"../images/surrey_logo.png\"></a>";
 echo "<button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#collapse\">";
