@@ -6,7 +6,7 @@ require_once(LIB_PATH.DS.'database.php');
 class Visitor extends DatabaseObject {
 	
 	protected static $table_name="visitors";
-	protected static $db_fields = array('id', 'name', 'email', 'mobile','subject','message');
+	protected static $db_fields = array('id', 'name', 'email', 'mobile','subject','message','visit_date');
     	
 	public $id;
 	public $name;
@@ -14,12 +14,20 @@ class Visitor extends DatabaseObject {
 	public $mobile;
 	public $subject;
     public $message;
+    public $visit_date;
 
     public static function get_visitor_list() {
     $visitor_set = self::find_all();
     $output = "";
     foreach($visitor_set as $visitor) {
         $output .= "<tr>" ;
+        $output .= "<td>" ;
+        if($visitor->visit_date) {
+            $output .= datetime_to_short_text($visitor->visit_date);
+        } else {
+            $output .= "N/A";
+        }
+        $output .= "</td>";
         $output .= "<td>" ;
         $output .= $visitor->name;
         $output .= "</td>";

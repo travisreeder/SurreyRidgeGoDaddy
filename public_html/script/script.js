@@ -71,8 +71,15 @@ window.onload = function () {
     
     $(document).ready( function () {
         $('#visitors').dataTable( {
-            //ordering: true,
-            //searching: true
+            "columns": [
+            { "width": "15%" },
+            { "width": "10%" },
+            { "width": "10%" },
+            { "width": "10%" },
+            { "width": "10%" },
+            { "width": "40%" },
+            { "width": "5%" }
+          ]
         }                         
     );
     } );

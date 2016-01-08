@@ -20,6 +20,7 @@ include_layout_template('admin_navigation.php');
                             <table id="visitors" class="display">
                                 <thead>
                                     <tr>
+                                        <th>Visit Date</th>
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Mobile</th>

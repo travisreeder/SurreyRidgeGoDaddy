@@ -17,7 +17,8 @@ if (isset($_POST['submit'])) {
     $visitor->email = $database->escape_value($_POST["email"]);
     $visitor->mobile = $database->escape_value($_POST["mobile"]);
     $visitor->subject = $database->escape_value($_POST["subject"]);
-    $visitor->message = $database->escape_value($_POST["message"]);
+    $visitor->message = ($_POST["message"]);
+    $visitor->visit_date = strftime("%Y-%m-%d %H:%M:%S", time());
     
     // validations
     //$required_fields = array("menu_name","position","visible");
@@ -32,8 +33,8 @@ if (isset($_POST['submit'])) {
                 // send email notice
                 $time = strftime("%H:%M:%S",time());
             
-                $subject = "Visitor requested contact at {$time}";
-                $message ="Visitor '{$visitor->name}' has requested contact; the email provided was: {$visitor->email} with the following message: ".$visitor->message;
+                $subject = "Visitor Contact: {$visitor->subject}";
+                $message = "Visitor {$visitor->name} has requested contact.<br /><br />The email provided was: {$visitor->email}<br /><br />Message: {$visitor->message}";
    
                 $message = wordwrap($message, 70);
 
@@ -43,19 +44,21 @@ if (isset($_POST['submit'])) {
                 $mail = new PHPMailer();
 
                 $mail->IsSendmail(); // telling the class to use SendMail transport
-                $mail->AddReplyTo("surreyridgehoa@gmail.com","Surrey Ridge HOA");
+                $mail->AddReplyTo($visitor->email,$visitor->name);
                 $mail->SetFrom($visitor->email,$visitor->name);
-                $address = "travis@travisreeder.com";
-                $mail->AddAddress($address, "Travis Reeder");
+                
+                $address = "admin@surreyridge.co";
+                $mail->AddAddress($address, "SRHOA Admin");
 
                 $mail->Subject = $subject;
                 $mail->MsgHTML($message);
 
 
-                $result = $mail->Send();
-                echo $result ? 'Sent' : 'Error';
-            
-                redirect_to('thank_you.php');
+                if(!$mail->Send()){
+                    $contact_message = "Visitor contact was recorded successfully, but the mail send FAILED; you may want to retry sending this message again.";
+                } else {
+                    redirect_to('thank_you.php');
+                }
             } else {
                 // Failure
                 echo "Failure...";
@@ -74,11 +77,16 @@ if (isset($_POST['submit'])) {
 <!--<div class="container-fluid" id="container">-->
 <!--    <div class="display_content col-md-5">-->
     
-    <div class="form-area col-md-5">
-        <?php echo "<p class=\"message\">{$contact_message}</p>"; ?>
+    <div class="form-area">
+        <?php echo output_message($contact_message); ?>
         <form role="form" action="contact_me.php" method="post" >
                     <h3 style="margin-bottom: 25px; text-align: center;">Contact Us</h3>
 
+                    <div class="well well-sm">
+                    <b>PLEASE REMEMBER</b>, our HOA Board is comprised of <i>&quot;working stiffs&quot;</i> who have volunteered their precious time away from family to serve the community.  We really encourage others to get to know our community, serve and love others within the community, and extend grace and patience to us that are serving. We will try to answer all of your questions in a timely manner, but we cannot guarantee a fast response.
+                        <footer><h6>- Surrey Ridge HOA</h6></footer>
+                    </div>
+            
                     <div class="form-group">
 						<input type="text" class="form-control" name="name" placeholder="Name" required value="<?php echo isset($_POST['name']) ? $_POST['name'] : ""; ?>" />
 					</div>
@@ -99,7 +107,7 @@ if (isset($_POST['submit'])) {
                         <label for="captcha" class="required"><img src="captcha.php"></label>&nbsp;<input type="text" class="form-control" id="captcha" name="captcha" placeholder="Enter Captcha from above" required>
                     </div>
         
-        <input class="btn btn-primary pull-right" type="submit" name="submit" value="Submit" />
+        <input class="btn btn-primary" type="submit" name="submit" value="Submit" />
         </form>
     </div>
 <!--</div>-->
