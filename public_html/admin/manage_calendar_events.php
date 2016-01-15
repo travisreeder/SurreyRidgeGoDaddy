@@ -28,6 +28,7 @@ include_layout_template('admin_navigation.php');
             <thead>
                 <tr>
                     <th>Event Title</th>
+                    <th>Event Location</th>
                     <th>Event Description</th>
                     <th>Event Type</th>
                     <th>Start</th>

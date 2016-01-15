@@ -49,6 +49,7 @@ if (isset($_POST['submit'])) {
     
     
     $current_event->event_title = $database->escape_value($_POST["event_title"]);
+    $current_event->event_location = $_POST["event_location"];
     $current_event->event_description = $_POST["event_description"];
     $current_event->event_class = $database->escape_value($_POST["event_class"]);    
     $current_event->start = (int) $start;
@@ -83,22 +84,40 @@ if (isset($_POST['submit'])) {
                     <input class="form-control" type="text" name="event_title" placeholder="Event Title" required value="<?php echo $current_event->event_title ?>"/>
                 </div>
             </div>
-
+            
+            <div class="form-group">
+                <label class="col-xs-12" for="event_location">Event Location:</label>
+                <div class="col-xs-12">
+                    <input class="form-control" type="text" name="event_location" placeholder="Event Location" value="<?php echo $current_event->event_location ?>"/>
+                </div>
+            </div>    
+ 
             <div class="form-group">
                 <label class="col-xs-12" for="event_class">Event Type:</label>
                     <div class="col-xs-12">
                         <select class="form-control" name="event_class">
                             <?php
                             $local_event = new Calendar_Event();
-                            //var_dump($local_event->event_classes);
-                            while (list($key, $val) = each($local_event->event_classes)) {
-                                echo "$key => $val\n";
-                                echo "<option value=\"{$key}\"";
-                                if($key == $current_event->event_class) {
-                                    echo " selected"; 
+                            $event_classes = $local_event::get_event_classes();
+                            
+                            foreach($event_classes as $event_class){
+                                
+                                echo "<option value=\"{$event_class->desclist_shortvalue}\"";
+                                if($event_class->desclist_shortvalue == $current_event->event_class) {
+                                    echo " selected";
                                 }
-                                echo ">{$val}</option>";
+                                echo ">{$event_class->desclist_longvalue}</option>";
                             }
+
+                            //var_dump($local_event->event_classes);
+//                            while (list($key, $val) = each($local_event->event_classes)) {
+//                                echo "$key => $val\n";
+//                                echo "<option value=\"{$key}\"";
+//                                if($key == $current_event->event_class) {
+//                                    echo " selected"; 
+//                                }
+//                                echo ">{$val}</option>";
+//                            }
                             ?>
                         </select>
                     </div>
@@ -115,7 +134,7 @@ if (isset($_POST['submit'])) {
                     </script>
                 </div>
             </div>
-            
+                   
             <div class="form-group">
                 <label class="col-xs-12" for="event_start">Event Start Date/Time:</label>
                 <div class="col-xs-5 date_size_fixed">

@@ -29,6 +29,7 @@ if (isset($_POST['submit'])) {
     $event = new Calendar_Event();  
     
     $event->event_title = $database->escape_value($_POST["event_title"]);
+    $event->event_location = $_POST["event_location"];
     $event->event_description = $_POST["event_description"];
     $event->event_class = $database->escape_value($_POST["event_class"]);    
     $event->start = (int) $start;
@@ -65,16 +66,28 @@ if (isset($_POST['submit'])) {
             </div>
 
             <div class="form-group">
+                <label class="col-xs-12" for="event_location">Event Location:</label>
+                <div class="col-xs-12">
+                    <input class="form-control" type="text" name="event_location" placeholder="Event Location" value="<?php echo isset($_POST['event_location']) ? $_POST['event_location'] : ""; ?>"/>
+                </div>
+            </div>
+            
+            <div class="form-group">
                 <label class="col-xs-12" for="event_class">Event Type:</label>
                     <div class="col-xs-12">
                         <select class="form-control" name="event_class">
                             <?php
+                            
                             $local_event = new Calendar_Event();
-                            //var_dump($local_event->event_classes);
-                            while (list($key, $val) = each($local_event->event_classes)) {
-                                echo "$key => $val\n";
-                                echo "<option value=\"{$key}\">{$val}</option>";
+                            $event_classes = $local_event::get_event_classes();
+                            foreach($event_classes as $event_class){
+                                echo "<option value=\"{$event_class->desclist_shortvalue}\">{$event_class->desclist_longvalue}</option>";
                             }
+                            //var_dump($local_event->event_classes);
+//                            while (list($key, $val) = each($local_event->event_classes)) {
+//                                echo "$key => $val\n";
+//                                echo "<option value=\"{$key}\">{$val}</option>";
+//                            }
                             ?>
                         </select>
                     </div>

@@ -9,12 +9,12 @@ defined('DS') ? null : define('DS', DIRECTORY_SEPARATOR);
 
 defined('MAX_FILE_SIZE') ? null : define('MAX_FILE_SIZE','15360 KB');
 // For my Mac
-defined('ROOT') ? null : define('ROOT', DS.'Users'.DS.'travisreeder'.DS.'Sites'.DS.'SurreyRidgeGoDaddy');
-defined('SITE_ROOT') ? null : define('SITE_ROOT', DS.'Users'.DS.'travisreeder'.DS.'Sites'.DS.'SurreyRidgeGoDaddy'.DS.'public_html');
+//defined('ROOT') ? null : define('ROOT', DS.'Users'.DS.'travisreeder'.DS.'Sites'.DS.'SurreyRidgeGoDaddy');
+//defined('SITE_ROOT') ? null : define('SITE_ROOT', DS.'Users'.DS.'travisreeder'.DS.'Sites'.DS.'SurreyRidgeGoDaddy'.DS.'public_html');
 
 // For my work PC
-//defined('ROOT') ? null : define('ROOT', DS.'wamp'.DS.'www'.DS.'SurreyRidgeGoDaddy');
-//defined('SITE_ROOT') ? null : define('SITE_ROOT', DS.'wamp'.DS.'www'.DS.'SurreyRidgeGoDaddy'.DS.'public_html');
+defined('ROOT') ? null : define('ROOT', DS.'wamp'.DS.'www'.DS.'SurreyRidgeGoDaddy');
+defined('SITE_ROOT') ? null : define('SITE_ROOT', DS.'wamp'.DS.'www'.DS.'SurreyRidgeGoDaddy'.DS.'public_html');
 
 // For my hosted site
 //defined('ROOT') ? null : define('ROOT', DS.'home'.DS.'travisreeder');

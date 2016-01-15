@@ -71,6 +71,11 @@ include_layout_template('navigation2.php');
 
             <div class="container-fluid" id="container">
                 <div class="display_content">
+                <?php
+                $local_event = new Calendar_Event();
+                $event_array = $local_event->find_next_board_meeting();
+                echo "<center>".$local_event->get_next_board_meeting()."</center>";
+                ?>
 		    
             
 		        <?php echo output_message($message); ?>
@@ -95,11 +100,66 @@ include_layout_template('navigation2.php');
  						<?php if($current_subject && $current_subject->url != "") { include($current_subject->url); } ?>
 		        <?php } ?>
             
+                
 		      </div>
+            
+                <div class="modal fade" id="test-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">
+                        <?php
+                            //var_dump($event_array);
+                            foreach($event_array as $event) {
+                                echo $event->event_title;
+                            }
+                        ?>
+                    </h4>
+				</div>
+				<div class="modal-body" style="height: 400px">
+                    <?php foreach($event_array as $event) { ?>
+                    <div class="container-fluid" id="container">
+                        <div class="display_content">
+
+                            <b>Location: </b><?php echo $event->event_location."<br/><br/>" ?>
+                            
+                            <table style="border-spacing 0px; border: 0; padding: 0; margin: 0">
+                                <tbody>
+                                    <tr>
+                                        <td width="5%"><b>Start:</b></td>
+                                        <td width="95%"><?php echo date('d-M-Y', $event->start)." at ".date('g:ia', $event->start) ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>End:</b></td>
+                                        <td><?php echo date('d-M-Y', $event->end)." at ".date('g:ia', $event->end) ?></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div style="margin-left: -25px">
+                                <?php echo "<br/>".$event->event_description ?>
+                            </div>
+                           
+                            <?php } ?>
+
+                        </div>
+                    </div>
+                </div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+                
             </div>
             <!--
             </div>
             -->
+
+
+
 <?php include_layout_template('footer.php'); ?>
 <script>
         function hide_marquee() {

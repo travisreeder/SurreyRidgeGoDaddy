@@ -13,6 +13,8 @@ if(!$current_event) {
 <div class="container-fluid" id="container">
     <div class="display_content">
         
+        <p><b>Location: </b><?php echo $current_event->event_location ?></p>
+        
         <table style="border-spacing 0px; border: 0; padding: 0; margin: 0">
             <tr>
                 <td>

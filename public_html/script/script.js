@@ -138,7 +138,8 @@ window.onload = function () {
         $('#calendar_events').dataTable( {
             "columns": [
             { "width": "10%" },
-            { "width": "40%" },
+            { "width": "10%" },
+            { "width": "30%" },
             { "width": "10%" },
             { "width": "15%" },
             { "width": "15%" },
