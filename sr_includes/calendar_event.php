@@ -139,7 +139,7 @@ class Calendar_Event extends DatabaseObject {
 
         $query = "SELECT * ";
         $query .= "FROM calendar_events ";
-        $query .= "WHERE start = (SELECT min(start) from calendar_events WHERE event_class='event-success' and start > ".time().")";
+        $query .= "WHERE start = (SELECT min(start) from calendar_events WHERE event_class='event-success' and end > ".time().")";
 
 		//var_dump($query);
         return self::find_by_sql($query);
